@@ -1,0 +1,56 @@
+<script lang="ts">
+	import type { OnChangeFuncProps } from '$lib/components/types';
+
+	export let id: string | null = null
+	export let type = ''
+	export let label = ''
+	export let placeholder = ' '
+	export let value: string | number = ''
+	export let aftertext = ''
+	export let name: string | null = null
+	export let required: boolean | null = null
+	export let disabled: boolean | null = null
+	export let error: string | boolean = '' || false
+	export let sm = false
+	export let md = false
+	export let lg = false
+	export let inputClass: string | null = null
+
+	$: labelClasses = [error ? 'bg-error/20 rounded-md' : '', 'w-full'].join(' ')
+
+	$: classes = [
+		type !== 'checkbox' ? 'input input-bordered' : 'checkbox',
+		sm ? 'input-sm' : '',
+		md ? 'input-md' : '',
+		lg ? 'input-lg' : '',
+		error ? 'input-error' : '',
+		inputClass,
+		'w-full'
+	].join(' ')
+
+	export let onChange: OnChangeFuncProps | undefined = undefined
+
+	const handleInput = (e: Event) => {
+		value = (e.target as HTMLInputElement).value
+
+		if (onChange) {
+			onChange(e)
+		}
+	}
+</script>
+
+<div class="form-control field">
+	<label class={labelClasses}>
+		{#if label}
+			<span class="_label">{label}</span>
+		{/if}
+		<input {id} {type} {value} {placeholder} {required} {disabled} {name} class={classes} on:change={handleInput} />
+		{#if aftertext}
+			<span class="absolute bottom-2 right-7 bg-slate-700 px-2 rounded-full">{aftertext}</span>
+		{/if}
+	</label>
+	{#if error}
+		<div class="text-lg text-error">{error}</div>
+	{/if}
+</div>
+
