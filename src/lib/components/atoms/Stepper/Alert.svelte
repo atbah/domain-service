@@ -1,5 +1,5 @@
 <script>
-  import { Icon, ExclamationCircle, CheckCircle } from 'svelte-hero-icons';
+  import { Icon, ExclamationCircle } from 'svelte-hero-icons';
 </script>
 
 <Icon src={ExclamationCircle} color="red" solid />
