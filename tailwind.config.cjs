@@ -1,5 +1,8 @@
 module.exports = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		"./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
+	],
 	theme: {
 		extend: {
 			colors: {
@@ -44,7 +47,7 @@ module.exports = {
 				'gray-600': '#868E96',
 				'gray-700': '#495057',
 				'gray-800': '#343A40',
-				'gray-900': '#F8F9FA',
+				'gray-900': '#212529',
 				'white': '#ffffff',
 				'black': '#000000'
 			},
@@ -63,5 +66,7 @@ module.exports = {
 	variants: {
 		extend: {}
 	},
-	plugins: []
+	plugins: [
+		require('flowbite/plugin')
+	],
 };

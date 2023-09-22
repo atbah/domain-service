@@ -33,6 +33,7 @@
 		"eslint-plugin-svelte": "^2.30.0",
 		"eslint-plugin-tailwindcss": "^3.12.1",
 		"eslint-plugin-unused-imports": "^2.0.0",
+		"flowbite-svelte": "^0.44.15",
 		"postcss": "^8.4.24",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
