@@ -12,6 +12,7 @@ export interface User {
     profile: UserProfile | undefined;
     registrationSteps: StepperItem[];
     currentStep: number;
+    lastStep: number;
 };
 
 export const user = writable(null as User | null);
@@ -27,7 +28,6 @@ const initUser = () => {
             {
                 name: 'Web Address',
                 description: 'Description in one line',
-                alert: 'Url is expired'
             },
             {
                 name: 'Email Address',
@@ -42,12 +42,18 @@ const initUser = () => {
                 description: 'Description in one line',
             },
         ],
-        currentStep: 0
+        currentStep: 0,
+        lastStep: 0
     })
 };
 
-export const changeStep = (step: number): void => {
-    user.update(current => ({ currentStep: step, registrationSteps: current?.registrationSteps || [], profile: current?.profile }))
+export const changeStep = (currentStep: number, lastStep: number): void => {
+    user.update(current => ({
+        currentStep: currentStep,
+        lastStep: lastStep,
+        registrationSteps: current?.registrationSteps || [],
+        profile: current?.profile
+    }))
 }
 
 // initialize user

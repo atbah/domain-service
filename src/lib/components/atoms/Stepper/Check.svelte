@@ -2,4 +2,4 @@
   import { Icon, CheckCircle } from 'svelte-hero-icons';
 </script>
 
-<Icon src={CheckCircle} class="bg-green rounded-full" />
+<Icon src={CheckCircle} color="green" class="rounded-full" solid />

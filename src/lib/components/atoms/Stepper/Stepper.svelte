@@ -36,15 +36,14 @@
   import { tweened } from 'svelte/motion'
   import { cubicOut } from 'svelte/easing'
   import { createEventDispatcher } from 'svelte'
-  import { Icon, ExclamationCircle, CheckCircle } from 'svelte-hero-icons';
-
   import type { StepperItem } from '$lib/components/types'
   import Check from './Check.svelte'
   import Alert from './Alert.svelte'
+
   export let steps: StepperItem[]
   export let current = 0
   export let vertical = false
-  export let size = vertical ? '2rem' : '3rem'
+  export let size = vertical ? '28px' : '28px'
   export let line = vertical ? '0.15rem' : '0.3rem'
   export let lineHeight = undefined
   export let borderRadius = '50%'
@@ -125,7 +124,7 @@
 </script>
 
 <div
-  class="w-full steps-container"
+  class="w-full flex steps-container"
   style={
     `--size: ${size}; 
     --line-thickness: ${line};
@@ -133,13 +132,12 @@
     --font-family: ${
       fontFamily || "'Helvetica Neue', Helvetica, Arial, sans-serif"
     };
-    display: flex; 
   `}
   style:flex-direction={vertical ? (reverse ? 'row-reverse' : 'row') : 'column'}
 >
   <!-- progress line container -->
   <div
-    class="flex flex-col items-center"
+    class="flex flex-col items-center pl-4"
     style:width={vertical ? size : '100%'}
     style:min-width={vertical ? size : null}
     style:height={vertical ? '100%' : size}
@@ -152,8 +150,7 @@
     <div
       style:width={vertical ? line : `${total}px`}
       style:height={vertical ? `${total}px` : line}
-      class="bg-gray-500"
-      style="display: flex; align-items:center;"
+      class="bg-gray-500 flex items-center"
       style:flex-direction={vertical
         ? 'column'
         : reverse
@@ -189,8 +186,8 @@
     {#each steps as step, i}
       <!-- step container -->
       <div
-        class="rounded-xl hover:bg-primary"
-        style="display: flex; align-items:center; flex-grow: 10; width: 100%"
+        class="flex items-center w-full rounded-xl hover:bg-primary px-2 stepper-item"
+        style="flex-grow: 10;"
         style:flex-direction={vertical
           ? reverse
             ? 'row-reverse'
@@ -201,7 +198,7 @@
       >
         <!-- circle and text label -->
         <div
-          style="display: flex; align-items: center; "
+          class="flex items-center"
           style:flex-direction={vertical
             ? reverse
               ? 'row-reverse'
@@ -215,9 +212,9 @@
             class="step
               {i <= $progress
               ? step.alert
-                ? 'bg-red'
-                : 'bg-primary'
-              : 'bg-white border border-gray-500'} 
+                ? 'bg-white'
+                : 'bg-white'
+              : 'bg-white'} 
               text-light
               "
             class:hover-highlight={clickable}
@@ -233,13 +230,13 @@
               {#if i <= $progress}
                 <svelte:component this={checkIcon} />
               {:else}
-                <span class="steps__number"></span>
+                <span class="step__number bg-white rounded-full border border-gray-500"></span>
               {/if}
             {/if}
           </div>
           <!-- text label -->
           <div
-            class="steps__label"
+            class="steps__label cursor-pointer"
             class:hover-highlight={clickable}
             style:margin-left={vertical
               ? reverse
@@ -266,12 +263,12 @@
                 }}
                 on:keypress={() => {}}
               >
-                <div class={`text-xl text-gray-700 ${current === i && 'text-xl text-gray-900 font-bold'}`}>{step.name}</div>
+                <div class={`step-name text-base text-gray-700 ${current === i && 'text-gray-900 font-bold'}`}>{step.name}</div>
 
                 {#if step.alert}
-                  <div class="text-sm text-red">{step.alert}</div>
+                  <div class="step-description text-sm text-red">{step.alert}</div>
                 {:else}
-                  <div class="text-sm text-gray-500">{step.description}</div>
+                  <div class="step-description text-sm text-gray-500">{step.description}</div>
                 {/if}
               </div>
             {:else}
@@ -284,7 +281,7 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .steps-container {
     font-family: var(--font-family);
     box-sizing: border-box;
@@ -302,18 +299,33 @@
     min-height: var(--size);
     font-size: calc(var(--size) * 0.5);
   }
-  .hover-highlight:hover {
-    cursor: pointer;
-    filter: brightness(85%);
-    box-sizing: border-box;
+  .step__number {
+    width: 24px;
+    height: 24px;
   }
+  // Highlight the circle
+  // .hover-highlight:hover {
+  //   cursor: pointer;
+  //   filter: brightness(85%);
+  //   box-sizing: border-box;
+  // }
   .steps__label {
     font-size: larger;
     box-sizing: border-box;
   }
-  .text-light {
-    color: var(--light) !important;
+  .stepper-item {
+    &:hover {
+      .step-name {
+        color: #fff;
+      }
+      .step-description {
+        color: #fff;
+      }
+    }
   }
+  // .text-light {
+  //   color: var(--light) !important;
+  // }
   .shadow {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   }

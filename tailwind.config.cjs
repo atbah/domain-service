@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
 	content: [
 		'./src/**/*.{html,js,svelte,ts}',
@@ -67,6 +69,11 @@ module.exports = {
 		extend: {}
 	},
 	plugins: [
-		require('flowbite/plugin')
+		require('flowbite/plugin'),
+		plugin(function({ addBase }) {
+			addBase({
+			   'html': { fontSize: "14px" },
+			})
+		}),
 	],
 };
