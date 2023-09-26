@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext } from 'svelte'
-    import type { WizardProps } from '$lib/components/types'
+	import type { WizardProps } from '$lib/components/types'
 
 	export let num: number;
 	

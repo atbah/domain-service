@@ -6,14 +6,14 @@
 	export let calendar = false
 	export let fullwidth = false
 	export let clear = false
-	export let className = ''
+	// export let class = ''
 </script>
 
 <button
 	on:click
 	type="button"
 	{...$$restProps}
-	class="btn {className}"
+	class="py-2 px-4 rounded rounded-xl btn {$$restProps.class}"
 	class:btn-fullwidth={fullwidth}
 	class:btn-outline={outline}
 	class:btn-sm={sm}

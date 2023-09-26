@@ -1,18 +1,10 @@
 <script lang="ts">
 	import { setContext } from 'svelte'
-	import { writable } from 'svelte/store'
+	import { step, nextStep, previousStep, gotoStep } from './store'
+
 	export let initialStep = 1
 	
-	let step = writable(initialStep)
-	
-	const nextStep = () => {
-		$step += 1
-	}
-	const previousStep = () => {
-		if ($step > 0) {
-			$step -= 1	
-		}
-	}
+	gotoStep(initialStep)
 	
 	setContext('StepWizard', {
 		step,
