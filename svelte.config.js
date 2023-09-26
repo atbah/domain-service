@@ -15,6 +15,9 @@ const config = {
 		adapter: adapter(),
 		files: {
 			lib: './src/lib/'
+		},
+		alias: {
+			'@components': './src/components/'
 		}
 	}
 };

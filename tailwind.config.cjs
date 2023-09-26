@@ -1,5 +1,26 @@
 const plugin = require('tailwindcss/plugin');
 
+const customSizes = {
+	12: '3rem', // 48px
+	24: '6rem', // 96px
+	32: '8rem', // 128px
+	64: '16rem', // 256px
+	72: '18rem', // 288
+	80: '20rem', // 320px
+	90: '22.5rem', // 360px
+	96: '24rem', // 384px
+	108: '27rem', // 432px
+	112: '28rem', // 448px
+	128: '32rem', // 512px
+	140: '35rem', // 560px
+	160: '40rem', // 640px
+	164: '41rem', // 656px
+	200: '54.25rem', // 900px
+	256: '64rem', // 1024px
+	384: '96rem', // 1536px
+	480: '120rem', // 1920px
+}
+
 module.exports = {
 	content: [
 		'./src/**/*.{html,js,svelte,ts}',
@@ -7,6 +28,13 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			width: customSizes,
+			minWidth: customSizes,
+			maxWidth: customSizes,
+			height: customSizes,
+			minHeight: customSizes,
+			maxHeight: customSizes,
+
 			colors: {
 				'primary': '#16A34A',
 				'primary-100': '#e8f6ed',
