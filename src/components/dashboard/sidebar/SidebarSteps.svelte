@@ -9,6 +9,6 @@
 	<div class="text-gray-600">Let's set up your account</div>
 </div>
 
-<div class="mt-8">
+<div class="mt-16">
 	<RegisterStepper />
 </div>
