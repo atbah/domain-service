@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { StepWizard, Step, StepStore } from '$lib/components/atoms/StepWizard'
+  import { StepWizard, Step, StepStore } from '$lib/components/StepWizard'
 	import { onboardingStep, changeOnboardingStep } from '$lib/stores/userStore'
 	import BusinessRegistration from '@components/onboarding/BusinessRegistration.svelte'
 	import WebAddress from '@components/onboarding/WebAddress.svelte'

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Typography from '$lib/components/atoms/Form/Typography.svelte'
+	import Typography from '$lib/components/Form/Typography.svelte'
 	import type { OnChangeFuncProps } from '$lib/components/types'
 
 	export let id: string | null = null
@@ -43,7 +43,7 @@
 <div class="form-control field">
 	<label class={labelClasses}>
 		{#if label}
-			<Typography size={'base'} color="gray-700">{label}</Typography>
+			<Typography size={'base'} color="gray-700" fontWeight="sm">{label}</Typography>
 		{/if}
 		<input {id} {type} {value} {placeholder} {required} {disabled} {name} class={classes} on:change={handleInput} />
 		{#if aftertext}

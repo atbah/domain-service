@@ -1,7 +1,7 @@
 <script lang="ts">
-	import RegisterStepper from '$lib/components/molecules/RegisterStepper.svelte';
+	import RegisterStepper from '@components/RegisterStepper.svelte'
 
-	const username: string = 'Edward';
+	const username: string = 'Edward'
 </script>
 
 <div class={`pl-6 mb-6`}>

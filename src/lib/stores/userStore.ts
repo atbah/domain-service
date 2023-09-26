@@ -39,6 +39,7 @@ const initUser = () => {
       {
         name: 'Web Address',
         description: 'Description in one line',
+        disabled: true
       },
       {
         name: 'Website',

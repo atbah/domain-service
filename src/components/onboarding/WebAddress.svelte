@@ -2,10 +2,10 @@
   import { createForm } from 'svelte-forms-lib'
   import * as yup from 'yup'
   import { Icon, ArrowRight } from 'svelte-hero-icons'
-  import InputField from '$lib/components/atoms/Form/InputField.svelte'
-  import RoundLabel from '$lib/components/atoms/Form/RoundLabel.svelte'
-  import Typography from '$lib/components/atoms/Form/Typography.svelte'
-  import Button from '$lib/components/atoms/Form/Button.svelte'
+  import InputField from '$lib/components/Form/InputField.svelte'
+  import RoundLabel from '$lib/components/Form/RoundLabel.svelte'
+  import Typography from '$lib/components/Form/Typography.svelte'
+  import Button from '$lib/components/Form/Button.svelte'
   import { user, changeUserProfile, changeOnboardingStep } from '$lib/stores/userStore'
 
   export let previousStep: () => void

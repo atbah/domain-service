@@ -195,6 +195,12 @@
           : 'column'}
         bind:clientWidth={segmentSizes[i].width}
         bind:clientHeight={segmentSizes[i].height}
+        on:click={() => {
+          if (!step.disabled) {
+            onClick(i)
+          }
+        }}
+        on:keypress={() => {}}
       >
         <!-- circle and text label -->
         <div
@@ -219,10 +225,6 @@
               "
             class:hover-highlight={clickable}
             class:shadow={i == current}
-            on:click={() => {
-              onClick(i)
-            }}
-            on:keypress={() => {}}
           >
             {#if step.alert}
               <svelte:component this={alertIcon} />
@@ -258,10 +260,6 @@
             {#if typeof step.name != 'undefined'}
               <div
                 class:text-primary={i <= $progress}
-                on:click={() => {
-                  onClick(i)
-                }}
-                on:keypress={() => {}}
               >
                 <div class={`step-name text-base text-gray-700 ${current === i && 'text-gray-900 font-bold'}`}>{step.name}</div>
 

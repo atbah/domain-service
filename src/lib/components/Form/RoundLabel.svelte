@@ -34,5 +34,5 @@
   {#if showDot}
     <div class="w-2 h-2 rounded rounded-full mr-2 {bgColor}"></div>
   {/if}
-  <div class="{textColor}">{text}</div>
+  <div class="{textColor} text-sm">{text}</div>
 </div>

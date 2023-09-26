@@ -100,7 +100,7 @@ module.exports = {
 		require('flowbite/plugin'),
 		plugin(function({ addBase }) {
 			addBase({
-			   'html': { fontSize: "14px" },
+			  'html': { fontSize: "14px" },
 			})
 		}),
 	],

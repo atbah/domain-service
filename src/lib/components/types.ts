@@ -6,6 +6,7 @@ export interface StepperItem {
   name: string;
   description: string;
   alert?: string;
+  disabled?: boolean;
 };
 
 export interface WizardProps {
