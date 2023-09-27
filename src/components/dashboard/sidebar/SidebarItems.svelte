@@ -1,5 +1,5 @@
 <script>
-	import { data } from './data';
+	import { data } from '$lib/data/data';
 	import { page } from '$app/stores';
 
 	const style = {

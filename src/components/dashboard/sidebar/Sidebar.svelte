@@ -1,6 +1,7 @@
 <script>
+	import { page } from '$app/stores'
 	import { sidebarOpen } from '../store';
-	// import SidebarItems from './SidebarItems.svelte';
+	import SidebarItems from './SidebarItems.svelte';
 	import SidebarHeader from './SidebarHeader.svelte';
 	import SidebarSteps from './SidebarSteps.svelte';
 
@@ -24,9 +25,11 @@
 >
 	<div class={style.container}>
 		<SidebarHeader />
-		<!-- Show it on sample screens -->
-		<!-- <SidebarItems /> -->
-		<SidebarSteps />
+		{#if $page.url.pathname === '/onboarding'}
+			<SidebarSteps />
+		{:else}
+			<SidebarItems />
+		{/if}
 	</div>
 </aside>
 

@@ -1,30 +1,18 @@
 <script lang="ts">
-  import { createForm } from 'svelte-forms-lib'
-  import * as yup from 'yup'
   import { Icon, ArrowRight } from 'svelte-hero-icons'
   import { toast } from '@zerodevx/svelte-toast'
-  import InputField from '$lib/components/Form/InputField.svelte'
-  import RoundLabel from '$lib/components/Form/RoundLabel.svelte'
   import Typography from '$lib/components/Form/Typography.svelte'
-  import Button from '$lib/components/Form/Button.svelte'
-  import { user, changeUserProfile, changeOnboardingStep } from '$lib/stores/userStore'
+  import { changeUserProfile } from '$lib/stores/userStore'
 
+  export let skip: () => void
   export let nextStep: () => void
 
   // TODO: website domains
   let selectedDomain: string;
   const options = ['mybusiness.com', 'championweb.com.au']
-  const _intializeValues = () => {
-    return {
-      businessName: '',
-      registrationDate: null,
-      renewalDate: null
-    }
-  }
 
   const onSelectOption = (option: string) => {
     selectedDomain = option
-    console.log("selected: ", option)
   }
 
   const handleSubmit = () => {
@@ -32,15 +20,13 @@
       toast.push('Please select one of the domains')
     } else {
       changeUserProfile({
-        domain: selectedDomain
+        website: selectedDomain
       })
       nextStep()
     }
   }
 
   const optionStyle = "flex items-center px-6 py-5 rounded rounded-xl cursor-pointer border border-gray-500"
-
-  $: console.log("option: ", selectedDomain)
 </script>
 
 <div class="flex w-164 mx-auto">
@@ -72,7 +58,7 @@
     <div class="flex row justify-between mt-4">
       <div></div>
       <div class="flex row">
-        <a href={null} class="mr-3 text-gray-500 cursor-pointer" on:click={nextStep}>
+        <a href={null} class="mr-3 text-gray-500 cursor-pointer" on:click={skip}>
           <Typography color="gray-600">Skip for now</Typography>
         </a>
         <a href={null} class="flex row items-center cursor-pointer" on:click={handleSubmit}>

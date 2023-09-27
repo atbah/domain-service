@@ -2,8 +2,8 @@
   import { StepWizard, Step, StepStore } from '$lib/components/StepWizard'
 	import { onboardingStep, changeOnboardingStep } from '$lib/stores/userStore'
 	import BusinessRegistration from '@components/onboarding/BusinessRegistration.svelte'
-	import WebAddress from '@components/onboarding/WebAddress.svelte'
-	import Website from '@components/onboarding/Website.svelte'
+	import WebAddress from '@components/onboarding/WebAddress/WebAddress.svelte'
+	import Website from '@components/onboarding/Website/index.svelte'
 	import EmailAddress from '@components/onboarding/EmailAddress.svelte'
 	import Xero from '@components/onboarding/Xero.svelte'
 

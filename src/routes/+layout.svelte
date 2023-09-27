@@ -1,5 +1,6 @@
 <script>
 	import { SvelteToast } from '@zerodevx/svelte-toast'
+	import {page} from '$app/stores'
 	import Layout from '@components/dashboard/Layout.svelte'
 
 	const options = {
@@ -11,6 +12,7 @@
 </script>
 
 <SvelteToast {options} />
+
 <Layout>
 	<slot />
 </Layout>
