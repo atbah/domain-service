@@ -16,6 +16,7 @@
 	export let md = false
 	export let lg = false
 	export let inputClass: string | null = null
+	export let wrapperClass: string | null = null
 
 	$: labelClasses = [error ? 'bg-error/20 rounded-md' : '', 'w-full'].join(' ')
 
@@ -40,7 +41,7 @@
 	}
 </script>
 
-<div class="form-control field">
+<div class="{wrapperClass} form-control field">
 	<label class={labelClasses}>
 		{#if label}
 			<Typography size={'base'} color="gray-700" fontWeight="sm">{label}</Typography>

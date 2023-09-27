@@ -22,3 +22,26 @@ export interface RoundLabelProps {
   text: string;
   showDot?: boolean;
 }
+
+export type DomainStatus = "Active" | "Expired" | "Expiring Soon"
+
+export interface Domain {
+  domain: string;
+  privider: string;
+  expires_at: Date;
+  status: string;
+  description: string;
+}
+
+export type SelectOptionType = {
+	name: string
+	value: string | number
+}
+
+export type FormFieldType = {
+	name: string
+	type: 'text' | 'number' | 'select' | 'checkbox'
+	options?: SelectOptionType[] | undefined
+	disabled?: boolean
+	label?: string
+}

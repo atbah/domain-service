@@ -1,5 +1,5 @@
 import { writable, get } from 'svelte/store'
-import type { StepperItem } from '$lib/components/types'
+import type { StepperItem, Domain } from '$lib/components/types'
 
 export interface UserProfile {
   username: string;
@@ -9,11 +9,13 @@ export interface UserProfile {
   businessName: string;
   registrationDate: Date;
   renewalDate: Date;
+  website: string;
 }
 
 export interface User {
   profile: UserProfile | undefined;
   registrationSteps: StepperItem[];
+  domains: Domain[];
 }
 
 export interface OnboardingStep {
@@ -39,7 +41,6 @@ const initUser = () => {
       {
         name: 'Web Address',
         description: 'Description in one line',
-        disabled: true
       },
       {
         name: 'Website',

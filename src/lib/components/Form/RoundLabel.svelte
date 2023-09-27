@@ -18,12 +18,12 @@
     case 'danger':
       textColor = 'text-red'
       bgColor = 'bg-red'
-      wrapperBgColor = 'bg-red-300'
+      wrapperBgColor = 'bg-red-200'
       break
     case 'warning':
       textColor = 'text-yellow'
       bgColor = 'bg-yellow'
-      wrapperBgColor = 'bg-yellow-300'
+      wrapperBgColor = 'bg-yellow-200'
       break
     default:
       break
