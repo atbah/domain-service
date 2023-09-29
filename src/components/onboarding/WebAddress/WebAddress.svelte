@@ -55,7 +55,7 @@
                 {:else if address.status == 'Expiring Soon'}
                   <RoundLabel type="warning" text={address.status} />
                 {:else}
-                  <RoundLabel type="danger" text={address.status} />
+                  <RoundLabel type="error" text={address.status} />
                 {/if}
               </div>
             </div>

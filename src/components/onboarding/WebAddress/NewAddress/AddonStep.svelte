@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Toggle } from 'flowbite-svelte';
-  import { Icon, ArrowRight, Check, Minus, Plus } from 'svelte-hero-icons'
+  import { Icon, ArrowRight, CheckCircle, PlusCircle, MinusCircle } from 'svelte-hero-icons'
   import Typography from '$lib/components/Form/Typography.svelte'
   import { user } from '$lib/stores/userStore'
   
@@ -11,7 +11,6 @@
   let duration: number = 1
 
   const changeDuration = (value: number) => {
-    console.log("~~~~~~~~~~")
     const newDuration = duration + value
     if (newDuration < 1) {
       return
@@ -30,10 +29,8 @@
 <div class="bg-primary-500 rounded-xl pb-1">
   <div class="flex justify-between items-center py-4 px-6">
     <div class="flex items-center">
-      <div class="bg-white rounded-full w-[18px] h-[18px] flex items-center justify-center">
-        <Icon src={Check} color="green" size="14" />
-      </div>
-      <div class="ml-4">
+      <Icon src={CheckCircle} class="text-white" solid size="20" />
+      <div class="ml-3">
         <Typography color="white">{domain}</Typography>
       </div>
     </div>
@@ -47,24 +44,16 @@
       <div class="flex-1">
         <Typography>Duration</Typography>
       </div>
-      <div class="flex">
-        <a
-          href={null}
-          class="w-[20px] h-[20px] flex rounded-full border border-gray-200 hover:bg-gray-200 cursor-pointer"
-          on:click={() => changeDuration(-1)}
-        >
-          <Icon src={Minus} class="m-auto" size="14" />
+      <div class="flex items-center">
+        <a href={null} class={`cursor-pointer`} on:click={() => changeDuration(-1)}>
+          <Icon src={MinusCircle} class={`${duration === 1 ? 'text-gray-400' : 'text-gray-900'}`} size="20" solid={duration === 1} />
         </a>
       </div>
-      <div class="mx-5 pointer-events-none">
+      <div class="mx-3 pointer-events-none">
         <Typography>{duration} year</Typography>
       </div>
-      <a
-        href={null}
-        class="w-[20px] h-[20px] flex rounded-full border border-gray-200 hover:bg-gray-200 cursor-pointer"
-        on:click={() => changeDuration(1)}
-      >
-        <Icon src={Plus} class="m-auto" size="14" />
+      <a href={null} class="cursor-pointer" on:click={() => changeDuration(1)}>
+        <Icon src={PlusCircle} class="text-gray-900" size="20" />
       </a>
     </div>
     <div class="flex justify-between p-4 border-t border-gray-500">

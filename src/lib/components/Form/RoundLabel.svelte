@@ -15,7 +15,7 @@
       bgColor = 'bg-primary'
       wrapperBgColor = 'bg-primary-200'
       break
-    case 'danger':
+    case 'error':
       textColor = 'text-red'
       bgColor = 'bg-red'
       wrapperBgColor = 'bg-red-200'

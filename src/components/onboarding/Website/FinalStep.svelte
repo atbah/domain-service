@@ -28,7 +28,7 @@
 
     <div class="p-4 bg-primary rounded-2xl">
       <div class="flex justify-between items-center">
-        <div>
+        <div class="max-w-96">
           <Typography size="xl" color="white" fontWeight="medium">Your website is not ready to go.</Typography>
           <Typography color="white">Further instruction in one line.{'\n'}Further instruction in one line.</Typography>
         </div>

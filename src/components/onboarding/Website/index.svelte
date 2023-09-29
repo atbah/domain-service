@@ -5,7 +5,7 @@
 	export let previousStep: () => void
 	export let nextStep: () => void
 
-	let step = 1
+	let step = 0
 
 	// move steps inside the inner step
 	const _onNext = () => {

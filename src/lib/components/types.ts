@@ -15,22 +15,12 @@ export interface WizardProps {
   previousStep: number;
 };
 
-export type RoundLabelColor = undefined | 'success' | 'danger' | 'warning'
+export type RoundLabelColor = undefined | 'success' | 'error' | 'warning'
 
 export interface RoundLabelProps {
   type?: RoundLabelColor;
   text: string;
   showDot?: boolean;
-}
-
-export type DomainStatus = "Active" | "Expired" | "Expiring Soon"
-
-export interface Domain {
-  domain: string;
-  privider: string;
-  expires_at: Date;
-  status: string;
-  description: string;
 }
 
 export type SelectOptionType = {
