@@ -43,7 +43,8 @@
 <Gallery wrapperClass="gap-2 grid-cols-2">
   {#if selectedOption}
     {#each selectedOption.plans as option}
-      <div
+      <a
+        href={null}
         class="{optionStyle} {selectedPlan && selectedPlan.name === option.name && 'border-2 border-green'}"
         on:click={() => onSelectOption(option)}
       >
@@ -59,7 +60,7 @@
             </div>
           {/each}
         </div>
-      </div>
+      </a>
     {/each}
   {/if}
 </Gallery>

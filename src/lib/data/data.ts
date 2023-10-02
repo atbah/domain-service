@@ -1,4 +1,4 @@
-import type { Domain, EmailProvider } from '$lib/types';
+import type { Domain, EmailProvider, Duration } from '$lib/types';
 import HomeIcon from '@components/dashboard/sidebar/icons/HomeIcon.svelte';
 import TasksIcon from '@components/dashboard/sidebar/icons/TasksIcon.svelte';
 import SettingsIcon from '@components/dashboard/sidebar/icons/SettingsIcon.svelte';
@@ -113,5 +113,39 @@ export const TEST_EMAIL_PROVIDERS: EmailProvider[] = [
 				]
 			}
 		]
+	}
+]
+
+
+export const TEST_DURATION: Duration[] = [
+	{
+		name: '5 years',
+		price: 379,
+		discount: 116,
+		currency: '$',
+	},
+	{
+		name: '4 years',
+		price: 329,
+		discount: 67,
+		currency: '$',
+	},
+	{
+		name: '3 years',
+		price: 249,
+		discount: 48,
+		currency: '$',
+	},
+	{
+		name: '2 years',
+		price: 179,
+		discount: 19,
+		currency: '$',
+	},
+	{
+		name: '1 year',
+		price: 99,
+		discount: 0,
+		currency: '$',
 	}
 ]

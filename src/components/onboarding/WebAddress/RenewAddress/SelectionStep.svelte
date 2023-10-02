@@ -10,7 +10,7 @@
 
   // TODO: website domains
   let selectedDomain: string;
-  const options = ['mybusiness.com', 'mybusiness.com.au', 'mybusiness.io', 'mybusiness.live']
+  const options = ['mybusiness.com', 'championweb.com.au']
 
   const onSelectOption = (option: string) => {
     selectedDomain = option
@@ -33,13 +33,13 @@
 
 <div class="flex flex-row justify-between mb-4">
   <div>
-    <Typography size="2xl" fontWeight="medium">The web address is available!</Typography>
-    <Typography color="gray-500">Further instruction in one line</Typography>
+    <Typography size="2xl" fontWeight="medium">Renew Web Address</Typography>
+    <Typography color="gray-500">Select Web Address to renew</Typography>
   </div>
 </div>
 {#each options as option}
   <div class="mb-3">
-    <a 
+    <a
       href={null}
       class="{optionStyle} {selectedDomain === option && 'border-2 border-green'}"
       on:click={() => onSelectOption(option)}

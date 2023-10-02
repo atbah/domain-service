@@ -2,6 +2,7 @@
   import { Icon, ArrowRight, Trophy, CheckCircle, PlusCircle, MinusCircle  } from 'svelte-hero-icons'
   import { toast } from '@zerodevx/svelte-toast'
   import Typography from '$lib/components/Form/Typography.svelte'
+  import InputField from '$lib/components/Form/InputField.svelte'
   import Gallery from '$lib/components/Gallery.svelte'
   import Tag from '$lib/components/Tag.svelte'
   import { changeUserProfile } from '$lib/stores/userStore'
@@ -47,6 +48,7 @@
   }
 
   let seats: number = 1
+  let email: string = ''
 
   const onChangeSeat = (value: number) => {
     const newDuration = seats + value
@@ -54,6 +56,11 @@
       return
     }
     seats += value
+  }
+
+  const onChangeEmail = (e: Event) => {
+    const value = (e.target as HTMLInputElement).value
+    email = value
   }
 
   const optionStyle = "px-6 py-5 rounded rounded-xl cursor-pointer border border-gray-200"
@@ -81,7 +88,8 @@
 
 <Gallery wrapperClass="gap-2 grid-cols-2 mb-4">
   {#each subscriptionOptions as option}
-    <div
+    <a
+      href={null}
       class="{optionStyle} {selectedPlan && selectedPlan.name === option.name && 'border-2 border-green'}"
       on:click={() => onSelectOption(option)}
     >
@@ -97,7 +105,7 @@
           </Tag>
         {/if}
       </div>
-    </div>
+    </a>
   {/each}
 </Gallery>
 
@@ -120,6 +128,14 @@
   </div>
   <div class="flex justify-between px-4 border-t border-gray-200">
     <div class="flex-1 py-4">
+      <InputField
+        md
+        type="type"
+        name="email"
+        inputClass="text-gray-900 rounded-xl border border-gray-200"
+        bind:value={email}
+        onChange={onChangeEmail}
+      />
       <Typography color="gray-200">Choose email name...</Typography>
     </div>
     <div class="flex-1 border-l border-gray-200 pl-4 py-4">

@@ -39,7 +39,8 @@
     </div>
     {#each options as option}
       <div class="mb-3">
-        <div
+        <a
+          href={null}
           class="{optionStyle} {selectedDomain === option && 'border-2 border-green'}"
           on:click={() => onSelectOption(option)}
         >
@@ -51,7 +52,7 @@
           <div class="ml-4">
             <Typography fontWeight="medium">{option}</Typography>
           </div>
-        </div>
+        </a>
       </div>
     {/each}
 

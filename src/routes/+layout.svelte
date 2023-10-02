@@ -1,7 +1,7 @@
 <script>
 	import { SvelteToast } from '@zerodevx/svelte-toast'
-	import {page} from '$app/stores'
 	import Layout from '@components/dashboard/Layout.svelte'
+	import '../styles/font.css'
 
 	const options = {
 		duration: 8000,

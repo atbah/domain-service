@@ -2,7 +2,7 @@
 	import SelectDomainStep from './SelectDomainStep.svelte'
 	import CompleteStep from './FinalStep.svelte'
 
-	export let previousStep: () => void
+	// export let previousStep: () => void
 	export let nextStep: () => void
 
 	let step = 0

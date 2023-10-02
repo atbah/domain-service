@@ -24,3 +24,10 @@ export interface EmailProvider {
   icon: string;
   plans: EmailProviderPlan[];
 }
+
+export interface Duration {
+  name: string;
+  price: number;
+  discount: number;
+  currency?: string;
+}

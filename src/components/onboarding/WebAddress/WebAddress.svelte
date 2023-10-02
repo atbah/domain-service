@@ -89,7 +89,7 @@
         class="text-white bg-primary hover:bg-primary-300"
         on:click={toggleNewAddressForm}
       >
-        <Typography color="white">Add New Address</Typography>
+        <Typography color="white">Add Web Address</Typography>
       </Button>
     </div>
   </div>

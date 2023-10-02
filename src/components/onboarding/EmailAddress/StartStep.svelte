@@ -56,7 +56,8 @@
 </div>
 <Gallery wrapperClass="gap-2 grid-cols-2">
   {#each options as option}
-    <div
+    <a
+      href={null}
       class="{optionStyle} {selectedOption && selectedOption.name === option.name && 'border-2 border-green'}"
       on:click={() => onSelectOption(option)}
     >
@@ -69,7 +70,7 @@
         <!-- TODO: replace this with svg icons later-->
         <Icon src={Trophy} size="32" />
       </div>
-    </div>
+    </a>
   {/each}
 </Gallery>
 

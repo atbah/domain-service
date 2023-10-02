@@ -91,6 +91,9 @@ module.exports = {
 				'4xl': '28px',
 				'5xl': '32px',
 			},
+			fontFamily: {
+				inter: ['Inter']
+			}
 		},
 	},
 	variants: {
@@ -100,7 +103,7 @@ module.exports = {
 		require('flowbite/plugin'),
 		plugin(function({ addBase }) {
 			addBase({
-			  'html': { fontSize: "14px" },
+			  'html': { fontSize: "16px" },
 			})
 		}),
 	],
