@@ -1,62 +1,73 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
-  import { Icon, ArrowRight } from 'svelte-hero-icons'
-  import RoundLabel from '$lib/components/Form/RoundLabel.svelte'
   import Typography from '$lib/components/Form/Typography.svelte'
   import Button from '$lib/components/Form/Button.svelte'
+  import Tag from '$lib/components/Tag.svelte'
   import { user } from '$lib/stores/userStore'
+  import type { Duration } from '$lib/types'
 
-  export let domain: string
+  export let previousStep: () => void
   export let nextStep: () => void
 
-  const onSetpEmail = () => {
-    goto('/onboarding')
+  const TEST_DATA: Duration = {
+    name: 'mybusiness.com',
+    price: 329,
+    currency: '$',
+    discount: 67
   }
 
-  const onSetupWebsite = () => {
-    goto('/onboarding')
+
+  const onRenew = () => {
+    // TODO: show modal
+
+    nextStep()
   }
 </script>
 
 <!-- TODO: show success alert -->
 
-<div class="p-3 bg-white border border-gray-200 rounded-xl">
-  <div class="flex justify-between items-center">
-    <div>
-      <div class="inline-block mb-4">
-        <RoundLabel type="success" text="Active" />
-      </div>
-      <Typography size="xl" fontWeight="medium">{domain}</Typography>
-      <Typography color="gray-500">Expires in 3 months</Typography>
-    </div>
+<div class="flex flex-row justify-between mb-4">
+  <div>
+    <Typography size="2xl" fontWeight="medium">Payment method</Typography>
+    <Typography color="gray-500">You can review you order in the next step before it’s final.</Typography>
+  </div>
+</div>
 
+<div class="rounded-xl border border-gray-200 mb-2.5 px-5 py-4">
+  <div class="flex self-center items-center justify-between h-12">
     <div>
-      <Button
-        md
-        type="button"
-        class="mr-5 bg-primary hover:bg-primary-100"
-        on:click={onSetpEmail}
-      >
-        <Typography color="white" fontWeight="medium">Setup Email</Typography>
-      </Button>
-      <Button
-        md
-        type="button"
-        class="bg-primary hover:bg-primary-100"
-        on:click={onSetupWebsite}
-      >
-        <Typography color="white" fontWeight="medium">Setup Website</Typography>
-      </Button>
+      <Typography size="xl" fontWeight="medium">{TEST_DATA.name}</Typography>
+      <Typography size="sm" color="gray-600">4 years</Typography>
+    </div>
+    
+    <div class="text-right">
+      <Typography fontWeight="medium">{TEST_DATA.currency}{TEST_DATA.price}</Typography>
+      {#if TEST_DATA.discount && TEST_DATA.discount > 0}
+        <div class="">
+          <Tag>
+            <Typography size="sm" color="primary">Save {TEST_DATA.currency}{TEST_DATA.discount}</Typography>
+          </Tag>
+        </div>
+      {/if}
     </div>
   </div>
 </div>
 
-<div class="flex row justify-between mt-4">
-  <div></div>
+<!--TODO: show input here to add card number -->
+
+<div class="flex justify-between items-end mt-4">
+  <div>
+    <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
+  </div>
+
   <div class="flex row">
-    <a href={null} class="flex row items-center cursor-pointer" on:click={nextStep}>
-      <span class="mr-2"><Typography fontWeight="medium">Back to Dashboard</Typography></span>
-      <Icon src={ArrowRight} size="20" class="text-gray-900" solid />
-    </a>
+    <Button
+      md
+      type="button"
+      class="bg-primary hover:bg-primary-100"
+      on:click={onRenew}
+    >
+      <Typography color="white" fontWeight="medium">Renew</Typography>
+    </Button>
   </div>
 </div>

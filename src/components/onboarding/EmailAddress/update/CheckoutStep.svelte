@@ -2,7 +2,8 @@
   import { Icon, ArrowRight, Trophy, CheckCircle, PlusCircle, MinusCircle  } from 'svelte-hero-icons'
   import { toast } from '@zerodevx/svelte-toast'
   import Typography from '$lib/components/Form/Typography.svelte'
-  import InputField from '$lib/components/Form/InputField.svelte'
+  // import InputField from '$lib/components/Form/InputField.svelte'
+  import Button from '$lib/components/Form/Button.svelte'
   import Gallery from '$lib/components/Gallery.svelte'
   import Tag from '$lib/components/Tag.svelte'
   import { changeUserProfile } from '$lib/stores/userStore'
@@ -58,18 +59,13 @@
     seats += value
   }
 
-  const onChangeEmail = (e: Event) => {
-    const value = (e.target as HTMLInputElement).value
-    email = value
-  }
-
-  const optionStyle = "px-6 py-5 rounded rounded-xl cursor-pointer border border-gray-200"
+  const optionStyle = "px-5 py-4 rounded rounded-xl cursor-pointer border border-gray-200"
 </script>
 
 <!-- Options & Checkout Start -->
 <div class="flex flex-row justify-between mb-4">
   <div>
-    <Typography size="2xl" fontWeight="medium">Options & Checkout</Typography>
+    <Typography size="2xl" fontWeight="medium">Manage Plan</Typography>
     <Typography color="gray-500">Further instruction in one line</Typography>
   </div>
 </div>
@@ -77,12 +73,12 @@
   <div class="flex items-center">
     <Icon src={Trophy} size="32" />
     <div class="ml-4">
-      <Typography fontWeight="medium">{selectedOption.name}</Typography>
-      <Typography color="gray-600" fontWeight="sm">{selectedOption.name}</Typography>
+      <Typography size="default" fontWeight="medium">{selectedOption.name}</Typography>
+      <Typography color="gray-600" fontWeight="xs">{selectedOption.name}</Typography>
     </div>
   </div>
   <div>
-    <Typography fontWeight="medium">$9/m</Typography>
+    <Typography size="default" fontWeight="medium">$9/m</Typography>
   </div>
 </div>
 
@@ -97,7 +93,7 @@
         <Typography fontWeight="medium">{option.name}</Typography>
         <Typography fontWeight="medium">{option.currency}{option.price}/{option.type}</Typography>
       </div>
-      <div class="flex justify-between items-center mb-3">
+      <div class="flex justify-between items-center">
         <Typography  color="gray-600" size="xs" fontWeight="medium">{option.description}</Typography>
         {#if option.extra}
           <Tag>
@@ -126,42 +122,25 @@
       <Icon src={PlusCircle} class="text-gray-900" size="20" />
     </a>
   </div>
-  <div class="flex justify-between px-4 border-t border-gray-200">
-    <div class="flex-1 py-4">
-      <InputField
-        md
-        type="type"
-        name="email"
-        inputClass="text-gray-900 rounded-xl border border-gray-200"
-        bind:value={email}
-        onChange={onChangeEmail}
-      />
-      <Typography color="gray-200">Choose email name...</Typography>
-    </div>
-    <div class="flex-1 border-l border-gray-200 pl-4 py-4">
-      <Typography>@mybusiness.com.au</Typography>
-    </div>
-  </div>
 </div>
 <!-- Options & Checkout End -->
 
-<!-- Payment method Start -->
-<div class="flex flex-row justify-between mt-12">
-  <div>
-    <Typography size="2xl" fontWeight="medium">Payment method</Typography>
-    <Typography color="gray-500">You can review your order in the next step before it's final</Typography>
-  </div>
-</div>
-<!-- Payment method End -->
-
-<div class="flex row justify-between mt-4">
-  <div>
-    <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
-  </div>
-  <div class="flex row">
-    <a href={null} class="flex row items-center cursor-pointer" on:click={handleSubmit}>
-      <span class="mr-2"><Typography fontWeight="medium">Next</Typography></span>
-      <Icon src={ArrowRight} size="20" class="text-gray-900" solid />
-    </a>
+<!-- footer navigation -->
+<div class="absolute right-8 bottom-8">
+  <div class="flex row justify-between">
+    <div></div>
+    <div class="flex items-center cursor-pointer">
+      <a href={null} class="mr-4" on:click={previousStep}>
+        <Typography fontWeight="medium">Cancel</Typography>
+      </a>
+      <Button
+        fullwidth
+        type="button"
+        class="px-4 py-2.5 text-white bg-primary hover:bg-primary-300"
+        on:click={nextStep}
+      >
+        <Typography color="white" fontWeight="medium">Next: Payment Details</Typography>
+      </Button>
+    </div>
   </div>
 </div>

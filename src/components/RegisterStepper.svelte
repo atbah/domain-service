@@ -7,7 +7,7 @@
   }
 </script>
 
-<div class="mx-4">
+<div class="-ml-2">
   <Stepper
     steps={$user?.registrationSteps || []}
     vertical={true}

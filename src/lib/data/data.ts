@@ -1,4 +1,4 @@
-import type { Domain, EmailProvider, Duration } from '$lib/types';
+import type { Domain, EmailProvider, Duration, EmailAddress } from '$lib/types';
 import HomeIcon from '@components/dashboard/sidebar/icons/HomeIcon.svelte';
 import TasksIcon from '@components/dashboard/sidebar/icons/TasksIcon.svelte';
 import SettingsIcon from '@components/dashboard/sidebar/icons/SettingsIcon.svelte';
@@ -9,6 +9,11 @@ export const data = [
 		title: 'Home',
 		icon: HomeIcon,
 		link: '/'
+	},
+	{
+		title: 'Onboarding',
+		icon: ProjectsIcon,
+		link: '/onboarding'
 	},
 	{
 		title: 'Customers',
@@ -148,4 +153,20 @@ export const TEST_DURATION: Duration[] = [
 		discount: 0,
 		currency: '$',
 	}
+]
+
+
+export const TEST_EMAIL_ADDRESSES: EmailAddress[] = [
+	{
+		username: 'Jone Doe',
+		email: 'jone@mybusiness.com',
+		storage: '2GB',
+		status: 'Activation Required'
+	},
+	{
+		username: 'Edward Winter',
+		email: 'edward@mybusiness.com',
+		storage: '29GB',
+		status: 'Active'
+	},
 ]

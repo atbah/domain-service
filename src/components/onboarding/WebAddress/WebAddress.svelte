@@ -7,7 +7,7 @@
   import Button from '$lib/components/Form/Button.svelte'
   import { user, changeUserProfile, changeOnboardingStep } from '$lib/stores/userStore'
   import { formatDate } from '$lib/utils/functions'
-  import type { Domain } from '$lib/components/types'
+  import type { Domain } from '$lib/types'
   import { TEST_WEB_ADDRESSES } from '$lib/data/data'
 
   export let previousStep: () => void
@@ -26,6 +26,10 @@
 
   const toggleNewAddressForm = () => {
     goto('/new-address')
+  }
+
+  const gotoRenewAddress = () => {
+    goto('/renew-address')
   }
 
   const convertDateToString = (value: any) => {
@@ -68,7 +72,7 @@
                 md
                 type="button"
                 class="text-white bg-primary hover:bg-primary-300"
-                on:click={toggleNewAddressForm}
+                on:click={gotoRenewAddress}
               >
                 <Typography color="white">Renew Now</Typography>
               </Button>

@@ -31,3 +31,11 @@ export interface Duration {
   discount: number;
   currency?: string;
 }
+
+
+export interface EmailAddress {
+  username: string;
+  email: string;
+  storage: string;
+  status: string;
+}

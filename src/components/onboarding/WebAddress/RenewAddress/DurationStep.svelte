@@ -60,7 +60,7 @@
   {/each}
 </div>
 
-<div class="flex row justify-between mt-4">
+<div class="flex justify-between items-center mt-4">
   <div>
     <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
   </div>

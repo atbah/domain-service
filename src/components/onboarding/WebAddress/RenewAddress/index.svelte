@@ -52,7 +52,7 @@
     {:else if step === 1}
       <DurationStep domain={domain} previousStep={_onPrevious} nextStep={_onNext} />
     {:else}
-      <FinalStep domain={domain} nextStep={nextStep} />
+      <FinalStep previousStep={_onPrevious} nextStep={nextStep} />
     {/if}
   </div>
 </div>

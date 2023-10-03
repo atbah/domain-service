@@ -35,3 +35,11 @@ export type FormFieldType = {
 	disabled?: boolean
 	label?: string
 }
+
+export type AvatarSize = "sm" | "md" | "xl" | "lg" 
+
+export type AvatarType = {
+  src: string;
+  alt?: string;
+  size?: AvatarSize;
+}

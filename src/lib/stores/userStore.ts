@@ -1,5 +1,14 @@
 import { writable, get } from 'svelte/store'
-import type { StepperItem, Domain } from '$lib/components/types'
+import type { StepperItem } from '$lib/components/types'
+import type { Domain } from '$lib/types'
+
+export interface Account {
+  username: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  avatar: string;
+}
 
 export interface UserProfile {
   username: string;
@@ -13,6 +22,7 @@ export interface UserProfile {
 }
 
 export interface User {
+  account: Account; // TODO: remove this when integrating the backend api
   profile: UserProfile | undefined;
   registrationSteps: StepperItem[];
   domains: Domain[];
@@ -32,6 +42,13 @@ export const onboardingStep = writable({
 
 const initUser = () => {
   user.set({
+    account: {
+      username: 'Edward Winter',
+      firstName: 'Edward',
+      lastName: 'Winter',
+      email: 'edward.winter@gmail.com',
+      avatar: 'https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=48'
+    },
     profile: undefined,
     registrationSteps: [
       {

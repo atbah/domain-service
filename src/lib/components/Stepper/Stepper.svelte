@@ -54,7 +54,7 @@
   export let checkIcon: any = Check
   export let alertIcon: any = Alert
 
-  const minStepSize = '5rem'
+  const minStepSize = '4rem'
   const stepLabelSpace = '1rem'
 
   // for backward compatible when using lineHeight instead of line
@@ -186,7 +186,7 @@
     {#each steps as step, i}
       <!-- step container -->
       <div
-        class="flex items-center w-full rounded-xl hover:bg-primary px-2 stepper-item"
+        class="flex items-center w-full rounded-xl hover:bg-primary px-2 stepper-item cursor-pointer"
         style="flex-grow: 10;"
         style:flex-direction={vertical
           ? reverse

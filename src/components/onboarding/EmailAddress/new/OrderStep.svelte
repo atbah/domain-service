@@ -10,7 +10,7 @@
   export let nextStep: () => void
   export let selectedOption: EmailProvider
 
-  const optionStyle = "px-6 py-5 rounded rounded-xl cursor-pointer border border-gray-500"
+  const optionStyle = "py-4 rounded rounded-xl cursor-pointer border border-gray-500"
 </script>
 
 <div class="flex flex-row justify-between mb-4">
@@ -20,7 +20,7 @@
   </div>
 </div>
 <div class="{optionStyle} mb-4">
-  <div class="flex items-center">
+  <div class="px-5 pb-4 flex items-center">
     <Icon src={Trophy} size="32" />
     <div class="flex-1 ml-4">
       <div class="flex items-center justify-between">
@@ -39,9 +39,9 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="px-5 pt-4 border-t border-gray-500">
     <Typography fontWeight="medium">Email Address</Typography>
-    <Typography size="sm" color="gray-500">edward@mybusiness.com.au</Typography>
+    <Typography size="sm">edward@mybusiness.com.au</Typography>
   </div>
 </div>
 

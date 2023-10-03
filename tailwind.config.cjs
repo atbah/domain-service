@@ -85,6 +85,7 @@ module.exports = {
 				xs: '11px',
 				sm: '13px',
 				base: '14px',
+				default: '16px',
 				xl: '18px',
 				'2xl': '20px',
 				'3xl': '24px',
