@@ -3,12 +3,10 @@
   import { sineIn } from 'svelte/easing'
   import { Drawer } from 'flowbite-svelte'
   import { goto } from '$app/navigation'
-  import { Icon, Trophy } from 'svelte-hero-icons'
   import RoundLabel from '$lib/components/Form/RoundLabel.svelte'
   import Typography from '$lib/components/Form/Typography.svelte'
   import Button from '$lib/components/Form/Button.svelte'
   import UpdateEmailAddress from '@components/onboarding/EmailAddress/update/index.svelte'
-  import { user, changeUserProfile, changeOnboardingStep } from '$lib/stores/userStore'
   import type { EmailAddress } from '$lib/types'
   import { TEST_EMAIL_ADDRESSES } from '$lib/data/data'
 
@@ -54,11 +52,14 @@
   <UpdateEmailAddress closeModal={_toggleDrawer} />
 </Drawer>
 
-<div class="flex w-384 mx-auto">
+<div class="mx-4">
   <div class="w-full mt-8">
     <div class="rounded-xl border border-gray-100">
       <div class="px-5 py-5 pb-4 flex items-center border-b border-gray-100">
-        <Icon src={Trophy} size="32" />
+        <div>
+          <img src="/images/icons/GoogleLogo1.svg" alt="google" />
+        </div>
+
         <div class="flex-1 ml-4">
           <div class="flex items-center justify-between">
             <div>

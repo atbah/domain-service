@@ -1,9 +1,7 @@
 <script lang="ts">
-  import { goto } from '$app/navigation'
   import Typography from '$lib/components/Form/Typography.svelte'
   import Button from '$lib/components/Form/Button.svelte'
   import Tag from '$lib/components/Tag.svelte'
-  import { user } from '$lib/stores/userStore'
   import type { Duration } from '$lib/types'
 
   export let previousStep: () => void
@@ -55,7 +53,9 @@
 
 <!--TODO: show input here to add card number -->
 
-<div class="flex justify-between items-end mt-4">
+
+<!-- desktop footer -->
+<div class="hidden sm:flex justify-between items-end mt-4">
   <div>
     <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
   </div>
@@ -71,3 +71,23 @@
     </Button>
   </div>
 </div>
+
+<!-- mobile footer -->
+<div class="fixed bottom-20 left-0 right-0 sm:hidden">
+  <div class="flex justify-center">
+    <div class="w-64 text-center">
+      <Button
+        fullwidth
+        type="button"
+        class="text-white bg-primary hover:bg-primary-300"
+        on:click={nextStep}
+      >
+        <Typography size="default" color="white" fontWeight="medium">Next</Typography>
+      </Button>
+
+      <div class="pt-6">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end footer -->

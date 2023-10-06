@@ -51,7 +51,7 @@
   </div>
 </div>
 
-<div class="flex row justify-between mt-4">
+<div class="hidden sm:flex row justify-between mt-4">
   <div></div>
   <div class="flex row">
     <a href={null} class="flex row items-center cursor-pointer" on:click={nextStep}>
@@ -60,3 +60,23 @@
     </a>
   </div>
 </div>
+
+<!-- mobile footer -->
+<div class="fixed bottom-20 left-0 right-0 sm:hidden">
+  <div class="flex justify-center">
+    <div class="w-64 text-center">
+      <Button
+        fullwidth
+        type="button"
+        class="text-white bg-primary hover:bg-primary-300"
+        on:click={nextStep}
+      >
+        <Typography size="default" color="white" fontWeight="medium">Next</Typography>
+      </Button>
+
+      <div class="pt-6">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end footer -->

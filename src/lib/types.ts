@@ -16,6 +16,7 @@ export interface EmailProviderPlan {
   type: string;
   features?: string[];
   extra?: string;
+  icons?: string[];
 }
 
 export interface EmailProvider {

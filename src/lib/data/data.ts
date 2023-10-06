@@ -28,7 +28,7 @@ export const data = [
 	{
 		title: 'Settings',
 		icon: SettingsIcon,
-		link: '/admin/settings'
+		link: '/settings'
 	}
 ];
 
@@ -60,7 +60,7 @@ export const TEST_EMAIL_PROVIDERS: EmailProvider[] = [
 	{
 		name: 'Google Workspace',
 		description: 'Further description in two lines.',
-		icon: 'google',
+		icon: '/images/icons/GoogleLogo1.svg',
 		plans: [
 			{
 				name: 'Basic',
@@ -72,6 +72,11 @@ export const TEST_EMAIL_PROVIDERS: EmailProvider[] = [
 					'Professional email inbox',
 					'Up to 5 users',
 					'Google Workspace'
+				],
+				icons: [
+					'/images/icons/GoogleSheet.svg',
+					'/images/icons/Docs.svg',
+					'/images/icons/Slides.svg',
 				]
 			},
 			{
@@ -84,6 +89,11 @@ export const TEST_EMAIL_PROVIDERS: EmailProvider[] = [
 					'Professional email inbox',
 					'Up to 5 users',
 					'Google Workspace'
+				],
+				icons: [
+					'/images/icons/GoogleSheet.svg',
+					'/images/icons/Docs.svg',
+					'/images/icons/Slides.svg',
 				]
 			}
 		]
@@ -91,7 +101,7 @@ export const TEST_EMAIL_PROVIDERS: EmailProvider[] = [
 	{
 		name: 'Micorsoft 360',
 		description: 'Further description in two lines.',
-		icon: 'microsoft',
+		icon: '/images/icons/MicrosoftLogo1.svg',
 		plans: [
 			{
 				name: 'Basic',
@@ -115,6 +125,11 @@ export const TEST_EMAIL_PROVIDERS: EmailProvider[] = [
 					'Professional email inbox',
 					'Up to 5 users',
 					'Office 365 Desktop'
+				],
+				icons: [
+					'/images/icons/PowerPoint.svg',
+					'/images/icons/Word.svg',
+					'/images/icons/Excel.svg',
 				]
 			}
 		]

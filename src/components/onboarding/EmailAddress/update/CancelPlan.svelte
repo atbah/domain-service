@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { Icon, Trophy } from 'svelte-hero-icons'
   import Typography from '$lib/components/Form/Typography.svelte'
   import type { EmailProvider } from '$lib/types';
 
@@ -17,7 +16,10 @@
 </div>
 <div class="{optionStyle} mb-4">
   <div class="px-5 flex items-center">
-    <Icon src={Trophy} size="32" />
+    <div>
+      <img src="/images/icons/GoogleLogo1.svg" alt="google" />
+    </div>
+
     <div class="flex-1 ml-4">
       <div class="flex items-center justify-between">
         <Typography size="default" fontWeight="medium">{selectedOption.name}</Typography>

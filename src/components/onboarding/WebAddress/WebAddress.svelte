@@ -37,7 +37,7 @@
   }
 </script>
 
-<div class="flex w-384 mx-auto">
+<div class="mx-4">
   <div class="w-full mt-8">
     {#each addresses as address}
       <div class="rounded-xl p-5 border-2 border-gray-500 mb-3">

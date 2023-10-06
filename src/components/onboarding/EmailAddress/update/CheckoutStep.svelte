@@ -71,7 +71,10 @@
 </div>
 <div class="flex items-center justify-between {optionStyle} mb-4">
   <div class="flex items-center">
-    <Icon src={Trophy} size="32" />
+    <div>
+      <img src="/images/icons/GoogleLogo1.svg" alt="google" />
+    </div>
+
     <div class="ml-4">
       <Typography size="default" fontWeight="medium">{selectedOption.name}</Typography>
       <Typography color="gray-600" fontWeight="xs">{selectedOption.name}</Typography>

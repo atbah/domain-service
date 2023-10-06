@@ -2,6 +2,7 @@
   import { Icon, ArrowRight } from 'svelte-hero-icons'
   import { toast } from '@zerodevx/svelte-toast'
   import Typography from '$lib/components/Form/Typography.svelte'
+  import Button from '$lib/components/Form/Button.svelte'
   import { changeUserProfile } from '$lib/stores/userStore'
 
   export let previousStep: () => void
@@ -56,7 +57,8 @@
   </div>
 {/each}
 
-<div class="flex row justify-between mt-4">
+<!-- desktop header-->
+<div class="hidden sm:flex row justify-between mt-4">
   <div>
     <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
   </div>
@@ -67,3 +69,23 @@
     </a>
   </div>
 </div>
+
+<!-- mobile footer -->
+<div class="fixed bottom-20 left-0 right-0 sm:hidden">
+  <div class="flex justify-center">
+    <div class="w-64 text-center">
+      <Button
+        fullwidth
+        type="button"
+        class="text-white bg-primary hover:bg-primary-300"
+        on:click={nextStep}
+      >
+        <Typography size="default" color="white" fontWeight="medium">Next</Typography>
+      </Button>
+
+      <div class="pt-6">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end footer -->

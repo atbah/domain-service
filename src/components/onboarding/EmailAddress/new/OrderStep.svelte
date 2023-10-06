@@ -1,10 +1,7 @@
 <script lang="ts">
-  import { Icon, ArrowRight, Trophy } from 'svelte-hero-icons'
-  import { toast } from '@zerodevx/svelte-toast'
   import Typography from '$lib/components/Form/Typography.svelte'
   import Button from '$lib/components/Form/Button.svelte'
-  import { changeUserProfile } from '$lib/stores/userStore'
-  import type { EmailProvider, EmailProviderPlan } from '$lib/types';
+  import type { EmailProvider } from '$lib/types';
 
   export let previousStep: () => void
   export let nextStep: () => void
@@ -21,13 +18,16 @@
 </div>
 <div class="{optionStyle} mb-4">
   <div class="px-5 pb-4 flex items-center">
-    <Icon src={Trophy} size="32" />
+    <div>
+      <img src={selectedOption.icon} alt="{selectedOption.name}" />
+    </div>
+
     <div class="flex-1 ml-4">
       <div class="flex items-center justify-between">
         <Typography fontWeight="medium">{selectedOption.name}</Typography>
         <Typography fontWeight="medium">$27/m</Typography>
       </div>
-      <div class="flex items-center justify-between">
+      <div class="block sm:flex items-center justify-between">
         <div class="flex items-center">
           <Typography color="gray-600" fontWeight="sm">30 GB storage</Typography>
           <div class="mx-1">
@@ -45,7 +45,8 @@
   </div>
 </div>
 
-<div class="flex row items-center justify-between mt-4">
+<!-- desktop footer -->
+<div class="hidden sm:flex row items-center justify-between mt-4">
   <div>
     <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
   </div>
@@ -60,3 +61,26 @@
     </Button>
   </div>
 </div>
+
+<!-- mobile footer -->
+<div class="fixed bottom-20 left-0 right-0 sm:hidden">
+  <div class="flex justify-center">
+    <div class="w-64 text-center">
+      <Button
+        fullwidth
+        type="button"
+        class="text-white bg-primary hover:bg-primary-300"
+        on:click={nextStep}
+      >
+        <Typography size="default" color="white" fontWeight="medium">Confirm Order</Typography>
+      </Button>
+
+      <div class="pt-6">
+        <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>
+          <Typography color="gray-600">Back</Typography>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end footer -->

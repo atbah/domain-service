@@ -2,6 +2,7 @@
   import { Toggle } from 'flowbite-svelte';
   import { Icon, ArrowRight, CheckCircle, PlusCircle, MinusCircle } from 'svelte-hero-icons'
   import Typography from '$lib/components/Form/Typography.svelte'
+  import Button from '$lib/components/Form/Button.svelte'
   import { user } from '$lib/stores/userStore'
   
   export let domain: string
@@ -63,7 +64,7 @@
   </div>
 </div>
 
-<div class="flex row justify-between mt-4">
+<div class="hidden sm:flex row justify-between mt-4">
   <div>
     <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
   </div>
@@ -74,3 +75,23 @@
     </a>
   </div>
 </div>
+
+<!-- mobile footer -->
+<div class="fixed bottom-20 left-0 right-0 sm:hidden">
+  <div class="flex justify-center">
+    <div class="w-64 text-center">
+      <Button
+        fullwidth
+        type="button"
+        class="text-white bg-primary hover:bg-primary-300"
+        on:click={nextStep}
+      >
+        <Typography size="default" color="white" fontWeight="medium">Next</Typography>
+      </Button>
+
+      <div class="pt-6">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end footer -->

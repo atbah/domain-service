@@ -1,10 +1,7 @@
 <script lang="ts">
-  import { Icon, ArrowRight, Trophy } from 'svelte-hero-icons'
-  import { toast } from '@zerodevx/svelte-toast'
   import Typography from '$lib/components/Form/Typography.svelte'
   import Button from '$lib/components/Form/Button.svelte'
-  import { changeUserProfile } from '$lib/stores/userStore'
-  import type { EmailProvider, EmailProviderPlan } from '$lib/types';
+  import type { EmailProvider } from '$lib/types';
 
   export let previousStep: () => void
   export let nextStep: () => void
@@ -21,7 +18,10 @@
 </div>
 <div class="{optionStyle} mb-4">
   <div class="px-5 flex items-center">
-    <Icon src={Trophy} size="32" />
+    <div>
+      <img src="/images/icons/GoogleLogo1.svg" alt="google" />
+    </div>
+
     <div class="flex-1 ml-4">
       <div class="flex items-center justify-between">
         <Typography size="default" fontWeight="medium">{selectedOption.name}</Typography>

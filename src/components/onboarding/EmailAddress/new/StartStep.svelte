@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Icon, ArrowRight, Trophy } from 'svelte-hero-icons'
+  import { Icon, ArrowRight } from 'svelte-hero-icons'
   import { toast } from '@zerodevx/svelte-toast'
   import Typography from '$lib/components/Form/Typography.svelte'
+  import Button from '$lib/components/Form/Button.svelte'
   import Gallery from '$lib/components/Gallery.svelte'
-  import { changeUserProfile } from '$lib/stores/userStore'
   import type { EmailProvider } from '$lib/types'
   import { TEST_EMAIL_PROVIDERS } from '$lib/data/data'
 	import { onMount } from 'svelte';
@@ -11,6 +11,7 @@
   export let previousStep: () => void
   export let nextStep: () => void
   export let onSelect: (provider: EmailProvider) => void
+
 
   // TODO: website domains
   let selectedOption: EmailProvider;
@@ -40,7 +41,7 @@
     }
   }
 
-  const optionStyle = "flex items-center px-6 py-5 rounded rounded-xl cursor-pointer border border-gray-500"
+  const optionStyle = "flex items-center justify-between px-6 py-5 rounded rounded-xl cursor-pointer border border-gray-500"
 </script>
 
 <div class="flex flex-row justify-between mb-4">
@@ -54,7 +55,7 @@
   </a>
 
 </div>
-<Gallery wrapperClass="gap-2 grid-cols-2">
+<Gallery wrapperClass="gap-2 grid-cols-1 sm:grid-cols-2">
   {#each options as option}
     <a
       href={null}
@@ -66,15 +67,17 @@
           <Typography fontWeight="medium">{option.name}</Typography>
           <Typography color="gray-500" size="sm" fontWeight="medium">{option.description}</Typography>
         </div>
+      </div>
 
-        <!-- TODO: replace this with svg icons later-->
-        <Icon src={Trophy} size="32" />
+      <div>
+        <img src={option.icon} alt="{option.name}" />
       </div>
     </a>
   {/each}
 </Gallery>
 
-<div class="flex row justify-between mt-4">
+<!-- desktop footer -->
+<div class="hidden sm:flex row justify-between mt-4">
   <div>
     <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
   </div>
@@ -85,3 +88,23 @@
     </a>
   </div>
 </div>
+
+<!-- mobile footer -->
+<div class="fixed bottom-20 left-0 right-0 sm:hidden">
+  <div class="flex justify-center">
+    <div class="w-64 text-center">
+      <Button
+        fullwidth
+        type="button"
+        class="text-white bg-primary hover:bg-primary-300"
+        on:click={nextStep}
+      >
+        <Typography size="default" color="white" fontWeight="medium">Next</Typography>
+      </Button>
+
+      <div class="pt-6">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end footer -->

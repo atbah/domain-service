@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { Icon, ArrowRight, Check, Trophy } from 'svelte-hero-icons'
+  import { Icon, ArrowRight, Check } from 'svelte-hero-icons'
   import { toast } from '@zerodevx/svelte-toast'
   import Typography from '$lib/components/Form/Typography.svelte'
+  import Button from '$lib/components/Form/Button.svelte'
   import Gallery from '$lib/components/Gallery.svelte'
-  import { changeUserProfile } from '$lib/stores/userStore'
-	import type { EmailProvider, EmailProviderPlan } from '$lib/types';
+	import type { EmailProvider, EmailProviderPlan } from '$lib/types'
 
   export let previousStep: () => void
   export let nextStep: () => void
@@ -38,9 +38,13 @@
     <Typography color="gray-500">Further instruction in one line</Typography>
   </div>
 
-  <Icon src={Trophy} size="32" solid />
+  {#if selectedOption}
+    <div>
+      <img src={selectedOption.icon} alt="{selectedOption.name}" />
+    </div>
+  {/if}
 </div>
-<Gallery wrapperClass="gap-2 grid-cols-2">
+<Gallery wrapperClass="gap-2 grid-cols-1 sm:grid-cols-2">
   {#if selectedOption}
     {#each selectedOption.plans as option}
       <a
@@ -53,10 +57,22 @@
           <Typography fontWeight="medium">{option.currency}{option.price}/{option.type}</Typography>
         </div>
         <div>
-          {#each option?.features || [] as feature}
+          {#each option?.features || [] as feature, featureIndex}
             <div class="flex items-center mb-1">
               <Icon src={Check} class="text-gray-300 mr-1" size="20" solid />
-              <Typography color="gray-600" size="sm" fontWeight="xs">{feature}</Typography>
+              <div class="flex items-center">
+                <Typography color="gray-600" size="sm" fontWeight="xs">{feature}</Typography>
+
+                {#if featureIndex === 3}
+                  <div class="ml-2.5 flex items-center">
+                    {#each option?.icons || [] as featureIcon}
+                      <div class="mr-1.5">
+                        <img src={featureIcon} alt="feature icon" />
+                      </div>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
             </div>
           {/each}
         </div>
@@ -65,7 +81,8 @@
   {/if}
 </Gallery>
 
-<div class="flex row justify-between mt-4">
+<!-- desktop footer -->
+<div class="hidden sm:flex row justify-between mt-4">
   <div>
     <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>Back</a>
   </div>
@@ -76,3 +93,26 @@
     </a>
   </div>
 </div>
+
+<!-- mobile footer -->
+<div class="fixed bottom-20 left-0 right-0 sm:hidden">
+  <div class="flex justify-center">
+    <div class="w-64 text-center">
+      <Button
+        fullwidth
+        type="button"
+        class="text-white bg-primary hover:bg-primary-300"
+        on:click={nextStep}
+      >
+        <Typography size="default" color="white" fontWeight="medium">Next</Typography>
+      </Button>
+
+      <div class="pt-6">
+        <a href={null} class="text-gray-500 cursor-pointer" on:click={previousStep}>
+          <Typography color="gray-600">Back</Typography>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end footer -->

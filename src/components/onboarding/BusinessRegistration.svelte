@@ -69,7 +69,7 @@
   }
 </script>
 
-<div class="flex w-164 mx-auto">
+<div class="max-w-164 mx-4">
   <form class="w-full mt-32" on:submit={handleSubmit}>
     <div class="flex flex-row justify-between mb-4">
       <div>
