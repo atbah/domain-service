@@ -55,52 +55,53 @@
 <div class="mx-4">
   <div class="w-full mt-8">
     <div class="rounded-xl border border-gray-100">
-      <div class="px-5 py-5 pb-4 flex items-center border-b border-gray-100">
-        <div>
+      <div class="px-5 py-5 pb-4 flex flex-col sm:flex-row items-start sm:items-center border-b border-gray-100">
+        <div class="flex-1 flex mb-4 sm:mb-0">
           <img src="/images/icons/GoogleLogo1.svg" alt="google" />
-        </div>
-
-        <div class="flex-1 ml-4">
-          <div class="flex items-center justify-between">
-            <div>
-              <Typography fontWeight="medium">Google Workspace</Typography>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                  <Typography color="gray-600" fontWeight="sm">30 GB storage</Typography>
-                  <div class="mx-1">
-                    <Typography color="gray-500" fontWeight="sm">∙</Typography>
+          <div class="ml-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <Typography fontWeight="medium">Google Workspace</Typography>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <Typography color="gray-600" fontWeight="sm">30 GB storage</Typography>
+                    <div class="mx-1">
+                      <Typography color="gray-500" fontWeight="sm">∙</Typography>
+                    </div>
+                    <Typography color="primary" fontWeight="sm">3 seats</Typography>
                   </div>
-                  <Typography color="primary" fontWeight="sm">3 seats</Typography>
                 </div>
               </div>
+  
             </div>
-
-            <Button
-              md
-              type="button"
-              class="text-white bg-white hover:bg-gray-300 border border-gray-200"
-              on:click={onClickManagePlan}
-            >
-              <Typography fontWeight="medium">Manage Plan</Typography>
-            </Button>
           </div>
         </div>
+
+        <Button
+          md
+          type="button"
+          class="text-white bg-white hover:bg-gray-300 border border-gray-200"
+          on:click={onClickManagePlan}
+        >
+          <Typography fontWeight="medium">Manage Plan</Typography>
+        </Button>
+
       </div>
 
       {#each addresses as address, i}
         <div class={`p-5 ${i !== 0 && 'border-t border-gray-100'}`}>
           <div class="flex items-center">
-            <div class="flex flex-1 items-center">
-              <div class="flex-1">
+            <div class="flex flex-1 flex-col sm:flex-row items-start sm:items-center">
+              <div class="flex-1 mb-2 sm:mb-0">
                 <Typography size="2xl">{address.email}</Typography>
                 <Typography color="gray-500">{address.username || ''}</Typography>
               </div>
     
-              <div class="flex-1">
+              <div class="flex-1 mb-2 sm:mb-0 text-center">
                 <Typography color="gray-700">{address.storage}</Typography>
               </div>
     
-              <div class="flex-1">
+              <div class="flex-1 mb-2 sm:mb-0 text-center">
                 <div class="inline-block">
                   {#if address.status == 'Active'}
                     <RoundLabel type="success" text={address.status} />

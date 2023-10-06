@@ -5,9 +5,10 @@
   export let value: string | null
   export let placeholder: string | undefined
   export let change: (event: any) => void
+  export let className = ''
 </script>
 
-<select class="select select-bordered w-full max-w-xs" bind:value={value} on:change={change}>
+<select class="select select-bordered w-full {className}" bind:value={value} on:change={change}>
   <option disabled selected={!value}>{placeholder || 'Choose an option'}</option>
   {#each items as item}
       <option value={item.value}>{item.name}</option>

@@ -1,8 +1,8 @@
-import type { Domain, EmailProvider, Duration, EmailAddress } from '$lib/types';
-import HomeIcon from '@components/dashboard/sidebar/icons/HomeIcon.svelte';
-import TasksIcon from '@components/dashboard/sidebar/icons/TasksIcon.svelte';
-import SettingsIcon from '@components/dashboard/sidebar/icons/SettingsIcon.svelte';
-import ProjectsIcon from '@components/dashboard/sidebar/icons/ProjectsIcon.svelte';
+import type { Domain, EmailProvider, Duration, EmailAddress } from '$lib/types'
+import type { StepperItem } from '$lib/components/types'
+import HomeIcon from '@components/dashboard/sidebar/icons/HomeIcon.svelte'
+import SettingsIcon from '@components/dashboard/sidebar/icons/SettingsIcon.svelte'
+import WordIcon from '@components/dashboard/sidebar/icons/WordIcon.svelte'
 
 export const data = [
 	{
@@ -12,25 +12,42 @@ export const data = [
 	},
 	{
 		title: 'Onboarding',
-		icon: ProjectsIcon,
+		icon: WordIcon,
 		link: '/onboarding'
-	},
-	{
-		title: 'Customers',
-		icon: ProjectsIcon,
-		link: '/admin/projects'
-	},
-	{
-		title: 'Library',
-		icon: TasksIcon,
-		link: '/admin/tasks'
 	},
 	{
 		title: 'Settings',
 		icon: SettingsIcon,
 		link: '/settings'
 	}
-];
+]
+
+export const ONBOARDING_STEPS: StepperItem[] = [
+	{
+		name: 'Business Registration',
+		description: 'Description in one line',
+	},
+	{
+		name: 'Web Address',
+		description: 'Description in one line',
+	},
+	{
+		name: 'Website',
+		description: 'Description in one line',
+	},
+	{
+		name: 'Email Address',
+		description: 'Description in one line',
+	},
+	{
+		name: 'Xero',
+		description: 'Description in one line',
+	},
+	{
+		name: 'Bookkeeping',
+		description: 'Description in one line',
+	},
+]
 
 export const TEST_WEB_ADDRESSES: Domain[] = [
 	{

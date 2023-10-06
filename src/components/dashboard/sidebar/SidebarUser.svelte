@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { goto } from '$app/navigation'
   import {user} from '$lib/stores/userStore'
   import Avatar from '$lib/components/Avatar.svelte'
   import Typography from '$lib/components/Form/Typography.svelte'
   import Button from '$lib/components/Form/Button.svelte'
 
   const gotoSettings = () => {
-    console.log("clicked manage account")
+    goto('/settings')
   }
 </script>
 {#if $user?.account}

@@ -17,6 +17,9 @@
 	export let lg = false
 	export let inputClass: string | null = null
 	export let wrapperClass: string | null = null
+	export let labelSize = "base"
+	export let lableColor = "gray-700"
+	export let lableClass = ""
 
 	$: labelClasses = [error ? 'bg-error/20 rounded-md' : '', 'w-full'].join(' ')
 
@@ -44,7 +47,9 @@
 <div class="{wrapperClass} form-control field">
 	<label class={labelClasses}>
 		{#if label}
-			<Typography size={'base'} color="gray-700" fontWeight="sm">{label}</Typography>
+			<div class="{lableClass}">
+				<Typography size={labelSize} color={lableColor} fontWeight="sm">{label}</Typography>
+			</div>
 		{/if}
 		<input {id} {type} {value} {placeholder} {required} {disabled} {name} class={classes} on:change={handleInput} />
 		{#if aftertext}

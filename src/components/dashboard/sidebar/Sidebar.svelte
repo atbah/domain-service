@@ -11,7 +11,7 @@
 			start: 'left-0',
 			end: 'right-0'
 		},
-		container: `px-6`,
+		container: `px-6 hidden sm:block`,
 		close: `hidden lg:block lg:w-72 lg:z-auto`,
 		open: `w-8/12 absolute z-40 sm:w-5/12 lg:hidden`,
 		default: `h-full bg-white h-screen overflow-y-auto top-0 lg:relative border-e border-gray-500`
