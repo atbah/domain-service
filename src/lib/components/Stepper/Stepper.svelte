@@ -43,8 +43,8 @@
   export let steps: StepperItem[]
   export let current = 0
   export let vertical = false
-  export let size = vertical ? '28px' : '28px'
-  export let line = vertical ? '0.15rem' : '0.3rem'
+  export let size = vertical ? '24px' : '24px'
+  export let line = vertical ? '2px' : '0.3rem'
   export let lineHeight = undefined
   export let borderRadius = '50%'
   export let fontFamily = ''
@@ -56,6 +56,7 @@
 
   const minStepSize = '4rem'
   const stepLabelSpace = '1rem'
+  let hoveredItemIndex: number | null = null
 
   // for backward compatible when using lineHeight instead of line
   if (lineHeight) {
@@ -150,7 +151,7 @@
     <div
       style:width={vertical ? line : `${total}px`}
       style:height={vertical ? `${total}px` : line}
-      class="bg-gray-500 flex items-center"
+      class="bg-gray-200 flex items-center"
       style:flex-direction={vertical
         ? 'column'
         : reverse
@@ -201,6 +202,8 @@
           }
         }}
         on:keypress={() => {}}
+        on:mouseover={() => hoveredItemIndex = i}
+        on:mouseout={() => hoveredItemIndex = null}
       >
         <!-- circle and text label -->
         <div
@@ -218,9 +221,9 @@
             class="step
               {i <= $progress
               ? step.alert
-                ? 'bg-white'
-                : 'bg-white'
-              : 'bg-white'} 
+                ? hoveredItemIndex === i ? 'bg-white' : 'bg-white'
+                : hoveredItemIndex === i ? 'bg-primary' : 'bg-white'
+              : ''} 
               text-light
               "
             class:hover-highlight={clickable}
@@ -230,7 +233,7 @@
               <svelte:component this={alertIcon} />
             {:else}
               {#if i <= $progress}
-                <svelte:component this={checkIcon} />
+                <svelte:component this={checkIcon} color={hoveredItemIndex !== i ? 'primary' : 'white'} />
               {:else}
                 <span class="step__number bg-white rounded-full border border-gray-500"></span>
               {/if}
@@ -298,8 +301,8 @@
     font-size: calc(var(--size) * 0.5);
   }
   .step__number {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
   // Highlight the circle
   // .hover-highlight:hover {

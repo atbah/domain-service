@@ -25,11 +25,11 @@
         <Typography size="default" fontWeight="medium">{selectedOption.name}</Typography>
       </div>
       <div class="flex items-center">
-        <Typography color="gray-600" fontWeight="sm">30 GB storage</Typography>
+        <Typography color="gray-600" fontWeight="xs">30 GB storage</Typography>
         <div class="mx-1">
-          <Typography color="gray-500" fontWeight="sm">∙</Typography>
+          <Typography color="gray-500" fontWeight="xs">∙</Typography>
         </div>
-        <Typography color="primary" fontWeight="sm">3 seats</Typography>
+        <Typography color="primary" fontWeight="xs">3 seats</Typography>
       </div>
     </div>
     <div class="flex items-center">

@@ -94,6 +94,7 @@
 				<svelte:component this={step.component}
 					previousStep={_onPrevious}
 					nextStep={_onNext}
+					domain={domain}
 				>
 				</svelte:component>
 			</div>

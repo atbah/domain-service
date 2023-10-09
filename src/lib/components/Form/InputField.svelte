@@ -17,7 +17,7 @@
 	export let lg = false
 	export let inputClass: string | null = null
 	export let wrapperClass: string | null = null
-	export let labelSize = "base"
+	export let labelSize = "sm"
 	export let lableColor = "gray-700"
 	export let lableClass = ""
 
@@ -30,7 +30,7 @@
 		lg ? 'input-lg' : '',
 		error ? 'input-error' : '',
 		inputClass,
-		'w-full'
+		'w-full text-base placeholder-gray-500'
 	].join(' ')
 
 	export let onChange: OnChangeFuncProps | undefined = undefined

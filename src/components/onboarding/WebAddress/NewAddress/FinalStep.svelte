@@ -26,8 +26,8 @@
       <div class="inline-block mb-4">
         <RoundLabel type="success" text="Active" />
       </div>
-      <Typography size="xl" fontWeight="medium">{domain}</Typography>
-      <Typography color="gray-500">Expires in 3 months</Typography>
+      <Typography size="default" fontWeight="medium">{domain}</Typography>
+      <Typography size="sm" color="gray-500">Expires in 3 months</Typography>
     </div>
 
     <div>

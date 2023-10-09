@@ -26,7 +26,7 @@
     name="searchKey"
     placeholder="Find your domain name..."
     wrapperClass="flex-1"
-    inputClass="p-3 text-gray-900 rounded-xl border border-gray-200"
+    inputClass="text-gray-900 rounded-xl border border-gray-200"
     bind:value={searchKey}
   />
   <Button

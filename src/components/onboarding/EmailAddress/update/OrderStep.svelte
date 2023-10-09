@@ -23,7 +23,7 @@
     </div>
 
     <div class="flex-1 ml-4">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between mb-1">
         <Typography size="default" fontWeight="medium">{selectedOption.name}</Typography>
       </div>
       <div class="flex items-center">

@@ -27,7 +27,7 @@
         <Typography fontWeight="medium">{selectedOption.name}</Typography>
         <Typography fontWeight="medium">$27/m</Typography>
       </div>
-      <div class="block sm:flex items-center justify-between">
+      <div class="block sm:flex items-center justify-between mb-1">
         <div class="flex items-center">
           <Typography color="gray-600" fontWeight="sm">30 GB storage</Typography>
           <div class="mx-1">

@@ -61,7 +61,7 @@
             <div class="flex items-center mb-1">
               <Icon src={Check} class="text-gray-300 mr-1" size="20" solid />
               <div class="flex items-center">
-                <Typography color="gray-600" size="sm" fontWeight="xs">{feature}</Typography>
+                <Typography color="gray-600" size="xs" fontWeight="xs">{feature}</Typography>
 
                 {#if featureIndex === 3}
                   <div class="ml-2.5 flex items-center">

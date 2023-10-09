@@ -13,7 +13,7 @@
 	on:click
 	type="button"
 	{...$$restProps}
-	class={`${fullwidth && 'w-full'} p-3 rounded rounded-xl btn ${$$restProps.class}`}
+	class={`${fullwidth && 'w-full'} p-2.5 rounded rounded-xl btn ${$$restProps.class}`}
 	class:btn-fullwidth={fullwidth}
 	class:btn-outline={outline}
 	class:btn-sm={sm}

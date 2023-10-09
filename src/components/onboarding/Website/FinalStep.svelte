@@ -16,7 +16,9 @@
 <div class="p-4 bg-primary rounded-2xl">
   <div class="sm:hidden">
     <div class="max-w-96">
-      <Typography size="xl" color="white" fontWeight="medium">Your website is not ready to go.</Typography>
+      <div class="mb-2">
+        <Typography size="default" color="white" fontWeight="medium">Your website is not ready to go.</Typography>
+      </div>
       <Typography color="white">Further instruction in one line.{'\n'}Further instruction in one line.</Typography>
     </div>
 
@@ -32,8 +34,10 @@
 
   <div class="hidden sm:flex justify-between items-center">
     <div class="max-w-96">
-      <Typography size="xl" color="white" fontWeight="medium">Your website is not ready to go.</Typography>
-      <Typography color="white">Further instruction in one line.{'\n'}Further instruction in one line.</Typography>
+      <div class="mb-2">
+        <Typography size="default" color="white" fontWeight="medium">Your website is not ready to go.</Typography>
+      </div>
+      <Typography size="sm" color="white">Further instruction in one line.{'\n'}Further instruction in one line.</Typography>
     </div>
 
     <Button

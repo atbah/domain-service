@@ -82,7 +82,7 @@
 
     <div class="ml-4">
       <Typography fontWeight="medium">{selectedOption.name}</Typography>
-      <Typography color="gray-600" fontWeight="sm">{selectedOption.name}</Typography>
+      <Typography color="gray-600" fontWeight="sm">{"30G storage"}</Typography>
     </div>
   </div>
   <div>
@@ -107,7 +107,7 @@
             </div>
           </div>
         {/if}
-        <div class="flex justify-between items-center mb-3">
+        <div class="flex justify-between items-center mb-2">
           <Typography fontWeight="medium">{option.name}</Typography>
           <Typography fontWeight="medium">{option.currency}{option.price}/{option.type}</Typography>
         </div>
@@ -121,7 +121,7 @@
         class="hidden sm:block {optionStyle} {selectedPlan && selectedPlan.name === option.name && 'border-2 border-green'}"
         on:click={() => onSelectOption(option)}
       >
-        <div class="flex justify-between items-center mb-3">
+        <div class="flex justify-between items-center mb-2">
           <Typography fontWeight="medium">{option.name}</Typography>
           <Typography fontWeight="medium">{option.currency}{option.price}/{option.type}</Typography>
         </div>

@@ -7,7 +7,6 @@
   import { TEST_DURATION } from '$lib/data/data'
   import type { Duration } from '$lib/types'
   
-  export let domain: string
   export let previousStep: () => void
   export let nextStep: () => void
 

@@ -44,8 +44,8 @@
         <div class="flex flex-col sm:flex-row items-start sm:items-center">
           <div class=" flex-1 flex flex-col sm:flex-row items-start sm:items-center">
             <div class="flex-1 mb-2 sm:mb-0">
-              <Typography size="2xl">{address.domain}</Typography>
-              <Typography color="gray-500">{address.description || ''}</Typography>
+              <Typography size="xl">{address.domain}</Typography>
+              <Typography  size="sm" color="gray-500">{address.description || ''}</Typography>
             </div>
   
             <div class="flex-1 text-center mb-2 sm:mb-0">

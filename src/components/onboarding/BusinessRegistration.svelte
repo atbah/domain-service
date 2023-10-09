@@ -69,7 +69,7 @@
   }
 </script>
 
-<div class="max-w-164 mx-4">
+<div class="max-w-164 mx-4 sm:mx-auto">
   <form class="w-full mt-6 sm:mt-32" on:submit={handleSubmit}>
     <div class="flex flex-row justify-between mb-4">
       <div>
@@ -101,7 +101,7 @@
       type="submit"
       class="mt-2 text-gray-900 border border-gray-200 hover:bg-gray-100"
     >
-      Renew Business Name
+      <Typography fontWeight="medium">Renew Business Name</Typography>
     </Button>
   </form>
 </div>

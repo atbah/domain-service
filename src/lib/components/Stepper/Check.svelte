@@ -1,5 +1,6 @@
 <script>
-  import { Icon, CheckCircle } from 'svelte-hero-icons';
+  import { Icon, CheckCircle, Check } from 'svelte-hero-icons';
+  export let color = 'primary';
 </script>
 
-<Icon src={CheckCircle} color="green" class="rounded-full" solid />
+<Icon src={CheckCircle} class={`w-6 h-6 rounded-full font-bold text-${color}`} solid />
